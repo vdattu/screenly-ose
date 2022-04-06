@@ -84,7 +84,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile.nginx
     ports:
-      - 80:80
+      - 8083:80
     environment:
       - HOME=/data
     depends_on:
