@@ -1806,11 +1806,18 @@ def integrations():
 
     return template('integrations.html', **context)
 
+def dont_get_node_ip():
+    import socket
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    result = s.getsockname()[0]
+    s.close()
+    return result
 
 @app.route('/splash-page')
 def splash_page():
-    my_ip = get_node_ip()
-    return template('splash-page.html', my_ip=get_node_ip())
+    my_ip = dont_get_node_ip()
+    return template('splash-page.html', my_ip=dont_get_node_ip())
 
 
 @app.errorhandler(403)
