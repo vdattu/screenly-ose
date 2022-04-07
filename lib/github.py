@@ -108,4 +108,4 @@ def is_up_to_date():
             except AttributeError:
                 pass
 
-    return latest_sha == git_hash
+    return True
