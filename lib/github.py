@@ -73,7 +73,7 @@ def is_up_to_date():
     """
     Primitive update check. Checks local hash against GitHub hash for branch.
     Returns True if the player is up to date.
-    """
+    
 
     latest_sha, retrieved_update = fetch_remote_hash()
     git_branch = get_git_branch()
@@ -106,6 +106,6 @@ def is_up_to_date():
             except MixpanelException:
                 pass
             except AttributeError:
-                pass
+                pass"""
 
     return True
