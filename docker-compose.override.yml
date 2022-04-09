@@ -1,7 +1,7 @@
 version: "2"
 services:
   srly-ose-server:
-    image: screenly/srly-ose-server:${DOCKER_TAG}
+    image: ravichandra99/srly-ose-server:${DOCKER_TAG}
     environment:
       - MY_IP=${MY_IP}
     volumes:
@@ -12,7 +12,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
 
   srly-ose-viewer:
-    image: screenly/srly-ose-viewer:${DOCKER_TAG}-${DEVICE_TYPE}
+    image: ravichandra99/srly-ose-viewer:${DOCKER_TAG}-${DEVICE_TYPE}
     mem_limit: ${VIEWER_MEMORY_LIMIT_KB}k
     volumes:
       - /home/pi/.screenly:/data/.screenly
