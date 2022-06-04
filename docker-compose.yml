@@ -1,7 +1,7 @@
 version: "2"
 services:
   srly-ose-server:
-    image: screenly/srly-ose-server
+    image: ravichandra99/srly-ose-server
     build:
       context: .
       dockerfile: docker/Dockerfile.server
@@ -19,7 +19,7 @@ services:
       io.balena.features.supervisor-api: '1'
 
   srly-ose-viewer:
-    image: screenly/srly-ose-viewer
+    image: ravichandra99/srly-ose-viewer
     build:
       context: .
       dockerfile: docker/Dockerfile.viewer
