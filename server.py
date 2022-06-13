@@ -1817,7 +1817,7 @@ def dont_get_node_ip():
 @app.route('/splash-page')
 def splash_page():
     my_ip = dont_get_node_ip()
-    return template('splash-page.html', my_ip=dont_get_node_ip())
+    return template('splash-page.html', my_ip='0.0.0.0')
 
 
 @app.errorhandler(403)
