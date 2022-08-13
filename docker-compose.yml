@@ -93,6 +93,21 @@ services:
     restart: always
     volumes:
       - resin-data:/data:ro
+  srly-ose-nginx:
+    image: screenly/srly-ose-nginx
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.nginx
+    ports:
+      - 8084:80
+    environment:
+      - HOME=/data
+    depends_on:
+      - srly-ose-server
+      - srly-ose-websocket
+    restart: always
+    volumes:
+      - resin-data:/data:ro
 
 volumes:
     resin-data:
